@@ -1,14 +1,12 @@
-/* Centro tutto il contenuto della pagina */
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centro verticale */
-  align-items: center; /* centro orizzontale */
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
 
-/* Contenuto principale centrato */
 main {
   display: flex;
   flex-direction: column;
@@ -16,7 +14,6 @@ main {
   text-align: center;
 }
 
-/* Schermate del quiz */
 #start-screen,
 #quiz-screen,
 #results-screen {
