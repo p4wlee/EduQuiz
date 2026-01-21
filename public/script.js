@@ -52,7 +52,8 @@ async function startQuiz() {
 
     // faccio apparire in console il messaggio di punteggio azzerato
     console.log("Punteggio azzerato", dataStart);
-    alert("Punteggio azzerato! puoi ricominciare il quiz", dataStart.punteggio);
+    showModal(`🔄 Punteggio azzerato!
+    Punteggio attuale: ${dataStart.punteggio}`);
 
     // richiesta al server per ottenere le domande
     const responseQuestions = await fetch("http://localhost:3000/questions");
