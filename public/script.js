@@ -7,6 +7,22 @@ let currentQuestionIndex = 0;
 // variabile che contiene l' opzione selezionata dall' utente
 let selectedOptionsIndex = null;
 
+// modale per i messaggi di feedback
+const modalOverlay = document.getElementById("modal-overlay");
+const modalMessage = document.getElementById("modal-message");
+const modalCloseBtn = document.getElementById("modal-close");
+
+// funzione per mostrare il modale con un messaggio
+function showModal(message) {
+  modalMessage.textContent = message;
+  modalOverlay.classList.remove("hidden");
+}
+
+// chiusura del modale al click del bottone
+modalCloseBtn.addEventListener("click", () => {
+  modalOverlay.classList.add("hidden");
+});
+
 // -- funzioni --
 
 // funzione per iniziare il quiz
@@ -107,7 +123,7 @@ async function submitAnswer() {
   try {
     // controllo se l' utente ha selezionato un' opzione
     if (selectedOptionsIndex === null) {
-      alert("Seleziona un' opzione prima di inviare la risposta");
+      showModal("Seleziona un'opzione prima di inviare la risposta");
       return;
     }
     // prendo la domande corrente
@@ -132,9 +148,9 @@ async function submitAnswer() {
 
     //mostriamo feedback all' utente
     if (result.correct) {
-      alert("Risposta Corretta! Punteggio attuale: " + result.punteggio);
+      showModal("✅ Risposta corretta! Punteggio attuale: " + result.punteggio);
     } else {
-      alert("Risposta Errata! Punteggio attuale: " + result.punteggio);
+      showModal("❌ Risposta errata! Punteggio attuale: " + result.punteggio);
     }
 
     // passo alla domanda successiva
