@@ -73,13 +73,13 @@ button {
   transition: all 0.2s ease;
 }
 
-/* Hover per i bottoni */
+/* hover per i bottoni */
 .option-button:hover,
 button:hover {
   border-color: #6366f1;
 }
 
-/* Selezione */
+/* selezione */
 .option-button.selected {
   background-color: #4caf50;
   color: white;
@@ -125,12 +125,12 @@ button:hover {
   color: #1e293b;
 }
 
-/* Utility */
+/* utility */
 .hidden {
   display: none;
 }
 
-/* Animazione */
+/* animazione */
 @keyframes scaleIn {
   from {
     transform: scale(0.9);
