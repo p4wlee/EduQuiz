@@ -97,9 +97,7 @@ button:hover {
   background-color: #4f46e5;
 }
 
-/* =========================
-   MODALE
-========================= */
+/* modale */
 .modal-overlay {
   position: fixed;
   inset: 0;
